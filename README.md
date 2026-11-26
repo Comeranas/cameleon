@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="cameleon-marca.png" alt="Cameleon Logo" width="380" />
+  <img src="cameleon-icon.png" alt="Cameleon Logo" width="380" />
 
   # Cameleon
 
