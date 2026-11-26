@@ -1,33 +1,29 @@
-<div align="center">
+# Cameleon
 
-  <img src="cameleon-icon.png" alt="Cameleon Logo" width="380" />
+<p align="center">
+  <img src="./cameleon-icon.png" alt="Cameleon Logo" width="380" />
+</p>
 
-  # Cameleon
+<h3 align="center">🦎 Military-Grade Steganography That Survives WhatsApp Compression</h3>
+<p align="center"><strong>Engineered in Rust &amp; WebAssembly • 100% Client-Side • Zero-Knowledge</strong></p>
 
-  ### 🦎 Military-Grade Steganography That Survives WhatsApp Compression
-  **Engineered in Rust & WebAssembly • 100% Client-Side • Zero-Knowledge**
+<p align="center">
+  <a href="https://alejandrobriz.es/cameleon">
+    <img src="https://img.shields.io/badge/LAUNCH_APP-alejandrobriz.es%2Fcameleon-bafd00?style=for-the-badge&labelColor=0d0f14" alt="Launch Cameleon Live" />
+  </a>
+</p>
 
-  <br />
+<p align="center">
+  <em>No installation required. No sign-up. 100% processed locally in your browser's RAM.</em>
+</p>
 
-  <p align="center">
-    <a href="https://alejandrobriz.es/cameleon">
-      <img src="https://img.shields.io/badge/🚀_TRY_IT_LIVE_NOW-alejandrobriz.es%2Fcameleon-bafd00?style=for-the-badge&logoColor=0d0f14&labelColor=0d0f14" alt="Launch Cameleon Live" height="48" />
-    </a>
-  </p>
-
-  <p align="center">
-    <em>No installation required. No sign-up. 100% processed in your browser's RAM.</em>
-  </p>
-
-  <p align="center">
-    <img src="https://img.shields.io/badge/Rust-Core-black?style=flat-square&logo=rust" alt="Rust Core" />
-    <img src="https://img.shields.io/badge/WebAssembly-Fast%20%26%20Safe-654FF0?style=flat-square&logo=webassembly&logoColor=white" alt="WebAssembly" />
-    <img src="https://img.shields.io/badge/WhatsApp%20Resilient-2D--DCT%20%2B%20ECC-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp Resilient" />
-    <img src="https://img.shields.io/badge/Privacy-Zero--Knowledge-bafd00?style=flat-square&logoColor=black" alt="Zero-Knowledge" />
-    <img src="https://img.shields.io/badge/Transfer-AirDrop%20%2F%20QuickShare-38bdf8?style=flat-square" alt="AirDrop Support" />
-  </p>
-
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/Rust-Core-black?style=flat-square&logo=rust" alt="Rust Core" />
+  <img src="https://img.shields.io/badge/WebAssembly-WASM-654FF0?style=flat-square&logo=webassembly&logoColor=white" alt="WebAssembly" />
+  <img src="https://img.shields.io/badge/WhatsApp-Resilient_DCT-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp Resilient" />
+  <img src="https://img.shields.io/badge/Zero_Knowledge-Local_First-bafd00?style=flat-square&labelColor=111317" alt="Zero-Knowledge" />
+  <img src="https://img.shields.io/badge/AirDrop-Quick_Share-38bdf8?style=flat-square" alt="AirDrop Support" />
+</p>
 
 ---
 
@@ -46,9 +42,9 @@ Don't take our word for it — test it right now in **4 simple steps**:
 
 ---
 
-<div align="center">
-  <img src="cameleon-color.png" alt="Cameleon Visual Identity" width="400" />
-</div>
+<p align="center">
+  <img src="./cameleon-icon.png" alt="Cameleon App Icon" width="160" />
+</p>
 
 ---
 
@@ -87,14 +83,14 @@ When you encrypt a message with PGP or standard ciphers, an interceptor sees gar
 
 No signup, no tracking cookies, no server dependencies.
 
-<div align="center">
+<p align="center">
   <br />
   <a href="https://alejandrobriz.es/cameleon">
-    <img src="https://img.shields.io/badge/👉_CLICK_HERE_TO_TEST_CAMELEON-bafd00?style=for-the-badge&logoColor=0d0f14&labelColor=0d0f14" alt="Test Cameleon" height="52" />
+    <img src="https://img.shields.io/badge/TEST_CAMELEON_ONLINE-alejandrobriz.es%2Fcameleon-bafd00?style=for-the-badge&labelColor=0d0f14" alt="Test Cameleon" />
   </a>
   <br /><br />
-  <strong><a href="https://alejandrobriz.es/cameleon">https://alejandrobriz.es/cameleon</a></strong>
-</div>
+  <strong>👉 <a href="https://alejandrobriz.es/cameleon">https://alejandrobriz.es/cameleon</a> 👈</strong>
+</p>
 
 ---
 
@@ -106,6 +102,6 @@ Designed and engineered by **Alejandro Briz**
 
 ---
 
-<div align="center">
+<p align="center">
   <sub>Cameleon © 2026 • Privacy by Math, Not by Policy.</sub>
-</div>
+</p>
