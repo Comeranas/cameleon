@@ -1,4 +1,18 @@
-# 🦎 Cameleon — Resilient Cryptographic Steganography / Esteganografía Criptográfica Resiliente
+<p align="center">
+  <img src="cameleon-icon.png" alt="Cameleon Logo" width="128" height="128" style="border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+</p>
+
+<h1 align="center">🦎 Cameleon — Resilient Cryptographic Steganography</h1>
+
+<p align="center">
+  <strong>Next-gen Zero-Knowledge steganography powered by Rust & WebAssembly. Built to withstand WhatsApp & Telegram JPEG compression.</strong>
+</p>
+
+<p align="center">
+  <a href="https://alejandrobriz.es/cameleon/"><img src="https://img.shields.io/badge/Live%20App-alejandrobriz.es%2Fcameleon-b9f70a?style=for-the-badge&logo=firefox" alt="Live App"></a>
+  <img src="https://img.shields.io/badge/Rust-WASM-orange?style=for-the-badge&logo=rust" alt="Rust WASM">
+  <img src="https://img.shields.io/badge/Zero--Knowledge-100%25%20Local-blue?style=for-the-badge&logo=shield" alt="Zero Knowledge">
+</p>
 
 <p align="center">
   <strong>[ <a href="#english">English</a> | <a href="#español">Español</a> ]</strong>
