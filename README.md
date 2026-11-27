@@ -1,107 +1,132 @@
-# Cameleon
+# 🦎 Cameleon — Resilient Cryptographic Steganography / Esteganografía Criptográfica Resiliente
 
 <p align="center">
-  <img src="./cameleon-icon.png" alt="Cameleon Logo" width="380" />
-</p>
-
-<h3 align="center">🦎 Military-Grade Steganography That Survives WhatsApp Compression</h3>
-<p align="center"><strong>Engineered in Rust &amp; WebAssembly • 100% Client-Side • Zero-Knowledge</strong></p>
-
-<p align="center">
-  <a href="https://alejandrobriz.es/cameleon">
-    <img src="https://img.shields.io/badge/LAUNCH_APP-alejandrobriz.es%2Fcameleon-bafd00?style=for-the-badge&labelColor=0d0f14" alt="Launch Cameleon Live" />
-  </a>
-</p>
-
-<p align="center">
-  <em>No installation required. No sign-up. 100% processed locally in your browser's RAM.</em>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Rust-Core-black?style=flat-square&logo=rust" alt="Rust Core" />
-  <img src="https://img.shields.io/badge/WebAssembly-WASM-654FF0?style=flat-square&logo=webassembly&logoColor=white" alt="WebAssembly" />
-  <img src="https://img.shields.io/badge/WhatsApp-Resilient_DCT-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp Resilient" />
-  <img src="https://img.shields.io/badge/Zero_Knowledge-Local_First-bafd00?style=flat-square&labelColor=111317" alt="Zero-Knowledge" />
-  <img src="https://img.shields.io/badge/AirDrop-Quick_Share-38bdf8?style=flat-square" alt="AirDrop Support" />
+  <strong>[ <a href="#english">English</a> | <a href="#español">Español</a> ]</strong>
 </p>
 
 ---
 
-## 🧪 Take the 30-Second WhatsApp Challenge
+<a name="english"></a>
+## 🇬🇧 English
 
-Most steganography tools break the moment you send the image through a chat app. **Cameleon was built specifically to survive it.**
+**Cameleon** is a resilient, local-first (*Zero-Knowledge*) cryptographic steganography platform powered by **Rust compiled to WebAssembly (WASM)**.
 
-Don't take our word for it — test it right now in **4 simple steps**:
+Unlike standard encryption—which outputs conspicuous ciphertexts that raise immediate red flags with firewalls and automated filters—steganography conceals the very existence of the communication. Cameleon embeds encrypted data into ordinary carrier photographs, built to withstand the aggressive JPEG compression applied by messaging apps like **WhatsApp and Telegram**.
 
-1. **Open the App**: Go to 👉 **[alejandrobriz.es/cameleon](https://alejandrobriz.es/cameleon)**
-2. **Hide a Secret**: Pick any photo, type a password, and write a confidential note. The live **Entropy Meter** will evaluate whether your picture has optimal visual texture.
-3. **Send via WhatsApp**: Click **"Enviar por WhatsApp"** (or AirDrop) and send the picture to a friend — or to your own chat.
-4. **Reveal the Message**: Save the received compressed picture, switch to the **"Revelar Mensaje"** tab, type the password, and watch the authenticated secret reappear flawlessly.
+### ⚡ Live Application
+Try the web app directly in your browser (no registration required):  
+👉 **[https://alejandrobriz.es/cameleon/](https://alejandrobriz.es/cameleon/)**
 
-> **💡 Even in Airplane Mode**: You can load the page, turn off WiFi/Mobile Data, and run the entire encryption/decryption offline. Nothing ever leaves your machine.
+* 100% Client-side execution (operates fully in Airplane Mode).
+* Zero backend dependencies, zero cloud storage, zero telemetry.
 
----
+### 🚀 Architecture & Technical Highlights
 
-<p align="center">
-  <img src="./cameleon-icon.png" alt="Cameleon App Icon" width="160" />
-</p>
+1. **Dual-Mode Transport:**
+   * **WhatsApp / Telegram (2D DCT + Reed-Solomon ECC):**
+     - Transforms luminance ($Y$) into frequency domains via **8×8 2D Discrete Cosine Transform (DCT)**.
+     - Modulates mid-frequency coefficient pairs $(3,2)$ and $(2,3)$—the exact visual band preserved by standard JPEG compressors.
+     - Incorporates **Reed-Solomon Error Correction Codes (ECC)** to restore 100% of the payload even after aggressive re-compression (~70%-75% quality).
+   * **Lossless PNG / Document Mode:**
+     - Spatial LSB embedding pseudorandomly scattered using **ChaCha20 PRNG**.
+     - Maximum throughput for large files, source code, and long texts.
 
----
+2. **Military-Grade Cryptography (AEAD):**
+   * **ChaCha20-Poly1305** authenticated encryption: clean failure detection on tampered files or wrong keys.
+   * Salted password key derivation resilient against offline GPU brute-force attacks.
 
-## ⚡ Why Cameleon is Different
+3. **Real-Time Entropy & Texture Diagnostic:**
+   * Client-side evaluator calculating **Shannon Entropy** and spatial edge gradient variance to warn users if an image has flat, telltale regions (< 42 score) or is optimal for camouflage (> 70 score).
 
-When you encrypt a message with PGP or standard ciphers, an interceptor sees garbled gibberish and immediately knows you are hiding something. **Steganography conceals the very fact that a conversation exists.**
+### 🔍 Security & Privacy Audit (Zero-Knowledge)
 
-| Traditional Web Steganography | 🦎 Cameleon (Rust + WASM) |
-| :--- | :--- |
-| ❌ **Breaks on WhatsApp**: Naive LSB bit-flipping is erased by lossy JPEG compression. | ✅ **WhatsApp & Telegram Proof**: Uses mid-frequency 2D-DCT coefficients paired with Reed-Solomon parity recovery. |
-| ❌ **Sends data to a backend server**: You must trust someone else's cloud. | ✅ **Zero-Knowledge**: 100% executed locally inside your browser CPU via WebAssembly. |
-| ❌ **Vulnerable on flat backgrounds**: Alters pixels blindly, creating visible banding. | ✅ **Real-Time Entropy Analyzer**: Shannon entropy ($H$) checks ensure mathematical imperceptibility before embedding. |
-| ❌ **No direct sharing**: Tedious manual download and file attachment. | ✅ **AirDrop & WhatsApp Native Integration**: 1-click native system share sheets. |
+Security in cryptographic software is verified through code inspection, not marketing promises:
 
----
+1. **Zero Telemetry (Zero Network Calls):**
+   - Open your browser's Developer Tools (`Network` tab): no `fetch`, `XHR`, or WebSocket requests are made during encoding or decoding.
+   - Operates completely offline in **Airplane Mode** once cached as a PWA.
+2. **Isolated WebAssembly Memory:**
+   - The entire cryptographic and DCT pipeline runs inside the local `/crates/stego-core` engine compiled to WASM.
+   - Passwords and payloads reside strictly in volatile memory and are cleared when the browser tab closes.
 
-## 🎛️ Dual Operating Modes
+### 🛠️ Development & Build Commands
 
-* **📱 WhatsApp & Telegram (Resilient DCT + ECC)**:  
-  Mathematical modulation in frequency space. Endures destructive ~75% JPEG compression and quantization matrices.
-* **📄 Lossless Document & AirDrop (RGB Spatial LSB)**:  
-  Maximum payload capacity for long texts, cryptographic keys, or code snippets transferred over AirDrop, Quick Share, or email attachments.
+```bash
+# Run mathematical and cryptographic unit tests
+cargo test
 
----
+# Compile release WebAssembly package
+wasm-pack build crates/stego-wasm --target web --out-dir ../../web/pkg --release
 
-## 🎯 Real-World Applications
+# Start local test server
+python3 -m http.server 3000 --directory web
+```
 
-* **🔑 Crypto Seed Phrase Backup**: Hide your 12 or 24 recovery words inside an ordinary vacation photo stored safely in your camera roll or Google Photos.
-* **🕵️ Investigative Journalism**: Send leak reports across censored network firewalls where encryption keywords trigger automated interception.
-* **🛂 Plausible Deniability**: Border inspection? Your device contains only normal vacation snapshots. Without the secret key, no forensic tool can distinguish the hidden data from natural camera sensor noise.
-* **📡 Zero-Trace AirDrop**: Share sensitive data peer-to-peer across a room with zero IP logs, zero telecom metadata, and zero cloud footprint.
-
----
-
-## 🚀 Ready to Try?
-
-No signup, no tracking cookies, no server dependencies.
-
-<p align="center">
-  <br />
-  <a href="https://alejandrobriz.es/cameleon">
-    <img src="https://img.shields.io/badge/TEST_CAMELEON_ONLINE-alejandrobriz.es%2Fcameleon-bafd00?style=for-the-badge&labelColor=0d0f14" alt="Test Cameleon" />
-  </a>
-  <br /><br />
-  <strong>👉 <a href="https://alejandrobriz.es/cameleon">https://alejandrobriz.es/cameleon</a> 👈</strong>
-</p>
+### ⚖️ License & Intellectual Property
+Distributed under a **Source-Available Software License (Non-Commercial Audit & Verification / All Rights Reserved)**. Anyone is permitted to inspect, compile, and audit the source code for security and personal educational purposes. Commercial exploitation, reproduction, or redistribution is strictly prohibited without prior written consent. See [LICENSE](LICENSE).
 
 ---
 
-## 👤 Author & Credits
+<a name="español"></a>
+## 🇪🇸 Español
 
-Designed and engineered by **Alejandro Briz**
-* Website: [alejandrobriz.es](https://alejandrobriz.es)
-* GitHub: [@Comeranas](https://github.com/Comeranas)
+**Cameleon** es una plataforma de esteganografía criptográfica local-first (*Zero-Knowledge*) desarrollada en **Rust compilado a WebAssembly (WASM)**.
+
+A diferencia del cifrado convencional —que genera cadenas ininteligibles que alertan a filtros y cortafuegos—, la esteganografía oculta la propia existencia del mensaje. Cameleon permite camuflar información confidencial dentro de imágenes cotidianas, resistiendo incluso la compresión destructiva JPEG aplicada por aplicaciones de mensajería como **WhatsApp y Telegram**.
+
+### ⚡ Aplicación en Producción
+Prueba la versión web en vivo y sin registro:  
+👉 **[https://alejandrobriz.es/cameleon/](https://alejandrobriz.es/cameleon/)**
+
+* 100% Procesamiento en el navegador (funciona en Modo Avión).
+* Sin backend, sin almacenamiento en la nube y sin telemetría.
+
+### 🚀 Arquitectura y Tecnologías Clave
+
+1. **Dual-Mode Resiliente & Lossless:**
+   * **Modo WhatsApp / Telegram (DCT 2D + Reed-Solomon):**
+     - Transforma el canal de luminancia $Y$ a dominios de frecuencia mediante la **Transformada Discreta del Coseno (DCT 8×8)**.
+     - Modula coeficientes en pares de frecuencias medias $(3,2)$ y $(2,3)$ para situar los bits en la zona que los compresores JPEG preservan.
+     - Integra códigos de corrección de errores **Reed-Solomon (ECC)** con paridad para recuperar el 100% del mensaje frente a la compresión destructiva (~70%-75% calidad).
+   * **Modo Lossless PNG / Documentos:**
+     - Ocultación espacial LSB con dispersión pseudoaleatoria mediante **ChaCha20 PRNG**.
+     - Máxima capacidad para documentos extensos, códigos y volcados sin compresión.
+
+2. **Criptografía Grado Militar (AEAD):**
+   * Cifrado autenticado **ChaCha20-Poly1305**: autenticación criptográfica que rechaza intentos fallidos o manipulaciones sin emitir basura.
+   * Derivación de claves basada en contraseña con sal criptográfica resistente a ataques de fuerza bruta.
+
+3. **Diagnóstico de Entropía & Textura en Tiempo Real:**
+   * Analizador visual integrado en el cliente: calcula la **Entropía de Shannon** y la variación de bordes de la imagen portadora para alertar al usuario si una imagen tiene áreas lisas delatoras (puntuación < 42) o si es óptima para el camuflaje (> 70).
+
+### 🔍 Auditoría de Seguridad & Privacidad (Zero-Knowledge)
+
+La confianza en las herramientas criptográficas se basa en la verificabilidad matemática, no en promesas:
+
+1. **Cero Telemetría (Zero Network Calls):**
+   - Puedes abrir las Herramientas de Desarrollador del navegador (pestaña `Red / Network`) y verificar que la aplicación no realiza ni una sola llamada `fetch`, `XHR` o websocket a ningún servidor externo durante el cifrado o descifrado.
+   - El motor funciona desconectado en **Modo Avión** una vez cargada la PWA.
+2. **Memoria Aislada en WebAssembly:**
+   - Todo el proceso de incrustación DCT, paridad Reed-Solomon y cifrado se ejecuta en el crate local `/crates/stego-core` y se compila a WebAssembly.
+   - No hay almacenamiento persistente de contraseñas ni logs locales. Al cerrar la pestaña, la memoria volátil del módulo se destruye.
+
+### 🛠️ Comandos de Desarrollo y Compilación
+
+```bash
+# Ejecutar tests de integración matemáticos y criptográficos
+cargo test
+
+# Compilar el paquete WebAssembly en modo release
+wasm-pack build crates/stego-wasm --target web --out-dir ../../web/pkg --release
+
+# Iniciar servidor local de desarrollo
+python3 -m http.server 3000 --directory web
+```
+
+### ⚖️ Licencia y Propiedad Intelectual
+Este proyecto se distribuye bajo una licencia **Source-Available (Código Fuente Auditable / Todos los derechos reservados)**. Se autoriza a cualquier persona o investigador a inspeccionar, compilar, auditar y verificar el código fuente con fines de seguridad y estudio personal. Queda expresamente prohibida la copia, venta, redistribución o explotación comercial de este software o de sus algoritmos derivados sin autorización previa por escrito del autor. Consulta [LICENSE](LICENSE).
 
 ---
 
-<p align="center">
-  <sub>Cameleon © 2026 • Privacy by Math, Not by Policy.</sub>
-</p>
+**Author & Lead Engineer / Autor:**  
+[Alejandro Briz](https://alejandrobriz.es) — Software Engineering & Cybersecurity Consulting / Consultoría tecnológica y desarrollo en Cantabria.
