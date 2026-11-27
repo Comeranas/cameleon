@@ -1,9 +1,50 @@
+Source Available Software License Agreement
 Copyright (c) 2026 Alejandro Briz (https://alejandrobriz.es)
+All Rights Reserved / Todos los derechos reservados.
 
-Se autoriza a cualquier persona a inspeccionar, compilar, auditar y verificar este código fuente con fines de seguridad, estudio personal y auditoría de privacidad.
+================================================================================
+ENGLISH VERSION (Official Text)
+================================================================================
 
-QUEDA PROHIBIDO:
-1. La redistribución, copia, venta, sublicenciamiento o explotación comercial de este software o de sus algoritmos derivados sin la autorización previa por escrito del autor.
-2. La publicación de servicios públicos o comerciales basados en este código fuente.
+Permission is hereby granted to any person to inspect, compile, audit, and 
+verify this source code on a non-commercial basis solely for the following purposes:
+1. Independent cybersecurity audits and technical verification confirming the 
+   complete absence of telemetry, spyware, and backdoors.
+2. Personal, non-commercial educational study and academic research.
 
-EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO.
+EXPRESSLY PROHIBITED:
+1. Any redistribution, copying (in whole or in part), sale, licensing, sublicensing, 
+   or commercial exploitation of this source code, its binaries, or derivative algorithms 
+   without prior written authorization from the copyright holder.
+2. The creation, deployment, or hosting of public or commercial applications, APIs, 
+   libraries, or services powered by this source code, its proprietary embedding techniques, 
+   or the Cameleon brand.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDER 
+BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN 
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+================================================================================
+VERSIÓN EN ESPAÑOL (Texto Informativo)
+================================================================================
+
+Por la presente se concede a cualquier persona el derecho a inspeccionar, compilar,
+auditar y verificar de manera no comercial este código fuente con fines exclusivos de:
+1. Auditoría independiente de ciberseguridad y verificación técnica de ausencia 
+   total de telemetría, rastreadores y puertas traseras.
+2. Estudio, formación personal no comercial e investigación académica.
+
+QUEDA EXPRESAMENTE PROHIBIDO:
+1. La redistribución, copia total o parcial, venta, licenciamiento, sublicenciamiento 
+   o explotación comercial de este código fuente o de sus binarios y algoritmos derivados 
+   sin la autorización previa y por escrito del titular del copyright.
+2. La creación, despliegue o publicación de aplicaciones, APIs, librerías o servicios 
+   comerciales o públicos que utilicen este código fuente, sus técnicas propietarias de 
+   incrustación o la marca Cameleon.
+
+EL SOFTWARE SE SUMINISTRA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA,
+INCLUYENDO, PERO SIN LIMITARSE A, LAS GARANTÍAS DE COMERCIABILIDAD O IDONEIDAD PARA UN FIN
+PARTICULAR. EN NINGÚN CASO EL TITULAR DEL COPYRIGHT SERÁ RESPONSABLE DE RECLAMACIONES, DAÑOS
+O PERJUICIOS DERIVADOS DEL USO DE ESTE SOFTWARE.
